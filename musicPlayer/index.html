@@ -81,21 +81,24 @@
   </style>
   <title>music-player</title>
   <script>
-    const load = document.getElementById('load')
-    const body = document.getElementsByTagName('body')[0]
-    let data = sessionStorage.getItem('load');
-    if (!data) {
-      setLoad(body, load)
-    }
+    window.onload = init
+    function init() {
+      const load = document.getElementById('load')
+      const body = document.getElementsByTagName('body')[0]
+      let data = sessionStorage.getItem('load');
+      if (!data) {
+        setLoad(body, load)
+      }
 
-    function setLoad(body, load) {
-      body.style.overflow = 'hidden';
-      load.style.display = 'block';
-      sessionStorage.setItem('load', 1);
-      setTimeout(() => {
-        load.style.display = 'none'
-        body.style.overflow = '';
-      }, 5000);
+      function setLoad(body, load) {
+        body.style.overflow = 'hidden';
+        load.style.display = 'block';
+        sessionStorage.setItem('load', 1);
+        setTimeout(() => {
+          load.style.display = 'none'
+          body.style.overflow = '';
+        }, 5000);
+      } 
     }
   </script>
 </head>
